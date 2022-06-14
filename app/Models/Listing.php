@@ -9,9 +9,10 @@ class Listing extends Model
 {
     use HasFactory;
 
-    public function scopeFilter($query, array $filters) {
+    public function scopeFilter($query, array $filters)
+    {
         // filtersta filtre var ise sorguyu döndür
-        if($filters['tag'] ?? false) {
+        if ($filters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . request('tag') . '%');
         }
     }
