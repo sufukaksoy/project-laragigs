@@ -18,11 +18,20 @@ use Illuminate\Support\Facades\Route;
 // All listings
 Route::get('/', [ListingController::class, 'index']);
 
+// Show create form
+
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
+// Store Listing data
 
+Route::post('/listings', [ListingController::class, 'store']);
+
+ 
 /*
 Route::get('/hello', function(){
     return response('<h1>Hello World</h1>',200)
