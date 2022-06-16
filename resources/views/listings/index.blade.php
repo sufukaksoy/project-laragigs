@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('components.layout')
 
 @section('content')
     @include('partials._hero')
@@ -12,6 +12,13 @@
         @else
             <p>No listings found</p>
         @endunless
+
+    </div>
+
+    <div class="mt-6 p-4">
+        {{$listings->links()}}
+
+        {{-- Pagination için kullanılan metod links() metodu --}}
 
     </div>
 @endsection
